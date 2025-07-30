@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.WealthWay.WealthCalulater.model.LumsumDto;
@@ -13,7 +14,8 @@ import com.WealthWay.WealthCalulater.model.SipDto;
 import com.WealthWay.WealthCalulater.model.WealthProjectedDto;
 import com.WealthWay.WealthCalulater.services.WealthWayCalulater;
 
-@RestController("app/wealthcalulater")
+@RestController()
+@RequestMapping("app/wealthcalulater")
 public class WealthWayWealthCalulater {
 	
 	@Autowired
