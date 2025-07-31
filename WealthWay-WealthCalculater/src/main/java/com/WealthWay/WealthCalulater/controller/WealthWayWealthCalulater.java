@@ -1,8 +1,8 @@
 package com.WealthWay.WealthCalulater.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.graphql.GraphQlProperties.Http;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +13,6 @@ import com.WealthWay.WealthCalulater.model.LumsumDto;
 import com.WealthWay.WealthCalulater.model.SipDto;
 import com.WealthWay.WealthCalulater.model.WealthProjectedDto;
 import com.WealthWay.WealthCalulater.services.WealthWayCalulater;
-
 @RestController()
 @RequestMapping("app/wealthcalulater")
 public class WealthWayWealthCalulater {
@@ -30,8 +29,8 @@ public class WealthWayWealthCalulater {
 		
 	}
 	
-	@PostMapping("/sip")
-   public ResponseEntity<WealthProjectedDto> sipWealth(SipDto dto) {
+	@PostMapping(value ="/sip")
+   public ResponseEntity<WealthProjectedDto> sipWealth(@RequestBody SipDto dto) {
 	
 	return new ResponseEntity<>(wealthWaycaluclater.SipWealth(dto),HttpStatus.OK);
 	
